@@ -15,17 +15,18 @@ window.onload = () => {
     axios
       .post(base_url + 'login_api.php/', data)
       .then((result) => {
-        console.log(result.data.status)
         if (result.data.user_id) {
           sessionStorage.setItem("user_id", result.data.user_id);
-          if(usertype_id = 3){
+          sessionStorage.setItem("usertype_id", result.data.usertype_id);
+          let usertype_id = parseInt(result.data.usertype_id);
+          if(result.data.usertype_id == 3){
             window.location.href = "../index.html"
-          }else if(usertype_id = 2){
+          }else if(result.data.usertype_id == 2){
             window.location.href = "../employees.html"
-          }else if(usertype_id = 1){
+          }else if(result.data.usertype_id == 1){
             window.location.href = "../admin_panel.html"
+            console.log('admin')
           }
-          console.log(usertype_id);
         }
       })
       .catch((err) => {
