@@ -12,14 +12,11 @@ window.onload = () => {
     data.append("email", email);
     data.append("password", password);    
 
-    console.log(data)
-
     axios
       .post(base_url + 'login_api.php/', data)
       .then((result) => {
         console.log(result.data.status)
         if (result.data.user_id) {
-          console.log("Logged In");
           sessionStorage.setItem("user_id", result.data.user_id);
           window.location.href = "../index.html"
         }
@@ -27,10 +24,5 @@ window.onload = () => {
       .catch((err) => {
         console.error(err);
       });
-
-    
-
   }
-
-  
 };
