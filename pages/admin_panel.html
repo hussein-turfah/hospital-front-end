@@ -4,23 +4,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/styles.css">
   <title>ADMIN PANEL</title>
 </head>
 <body>
-  <div id ="div1">
-    <h1>Admin Panel</h1>
+    <header>
+      <h1>Hospitals Admin</h1>
+      <button>Log Out</button>
+    </header>
+  <div class="innerbody">
+    <div class="sidebar">
+      <ul>
+        <li>Users</li>
+        <li>Hospitals</li>
+        <li>Departments</li>
+        <li>Rooms</li>
+      </ul>
+    </div>
+    <div class="table">
+      <table id="table1">
+        <th>
+          User Id
+        </th>
+        <th>
+          Name
+        </th>    
+      </table>
+    </div>
   </div>
-  <table id="table1">
-    <th>
-      User Id
-    </th>
-    <th>
-      Name
-    </th>
-      
-  </table>
-  <script src="../js/admin_panel.js"></script>
+  <script src="../js/admin_panel.js"></script>  
   <script src="../js/axios.min.js"></script>
 </body>
 </html>
