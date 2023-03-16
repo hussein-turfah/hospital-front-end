@@ -27,9 +27,7 @@ window.onload = () => {
       if(usertype_id[i].checked){
         usertype = usertype_id[i].value;
       }
-      console.log('the end')
     }
-    console.log('the end2')
     usertype = String(usertype)
     if(usertype == 'admin'){
       usertype = 1
@@ -51,7 +49,7 @@ window.onload = () => {
       .post(base_url + 'register_api.php/', data)
       .then((result) => {
         if (result.data.status == "success") {
-          console.log("registered succesfully");
+          console.log('please add me to the main screen in any way')
           window.location.href = 'login.html'
         }else{
           console.log('i am here')
@@ -94,4 +92,9 @@ window.onload = () => {
         console.error(err);
       });
   }
+
+  
+
+
+
 };
